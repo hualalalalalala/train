@@ -73,17 +73,17 @@ a {
 }
 .contentIn .content-left {
 	margin-top: 10px;
-	width: 550px;
+	width: 600px;
 }
 /*地图*/
 .content-left .map {
 	margin-top: 15px;
-	width: 550px;
+	width: 600px;
 	height: 400px;
 }
 /*介绍*/
 .contentIn .content-right {
-	width: 600px;
+	width: 550px;
 }
 .content-right .introduce {
 	text-indent: 2em;
