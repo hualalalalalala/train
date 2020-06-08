@@ -94,8 +94,6 @@
 
 /*底部*/
 .footer {
-    position: absolute;
-	bottom: 0;
     width: 100%;
     background-color: whitesmoke;
     /*margin-top: 5px;*/
