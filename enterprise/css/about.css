@@ -78,8 +78,8 @@ a {
 /*地图*/
 .content-left .map {
 	margin-top: 15px;
-	width: 600px;
-	height: 315px;
+	width: 550px;
+	height: 400px;
 }
 /*介绍*/
 .contentIn .content-right {
@@ -88,10 +88,10 @@ a {
 .content-right .introduce {
 	text-indent: 2em;
 	font-size: 16px;
-    line-height: 30px;
+    line-height: 35px;
 }
 .content-right .conn {
-	margin-top: 35px;
+	margin-top: 50px;
 	line-height: 40px;
 }
 .content-right .conn li {
