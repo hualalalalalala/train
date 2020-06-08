@@ -73,7 +73,7 @@ a {
 }
 .contentIn .content-left {
 	margin-top: 10px;
-	width: 600px;
+	width: 550px;
 }
 /*地图*/
 .content-left .map {
@@ -88,7 +88,7 @@ a {
 .content-right .introduce {
 	text-indent: 2em;
 	font-size: 16px;
-    line-height: 35px;
+    line-height: 40px;
 }
 .content-right .conn {
 	margin-top: 50px;
