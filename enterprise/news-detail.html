@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/news-detail.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <title>企业站</title>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="js/axios.min.js"></script>
+
+    <!--<script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>-->
+</head>
+<body>
+<body>
+<!--头部-->
+<div class="header" id="top">
+    <div class="headerIn">
+        <!--class="iconfont icon-food"-->
+        <h1 class="left"><a href="index.html" ></a></h1>
+        <div class="right">
+            <ul class="menu clearfix">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="news.html">美食学堂</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <!--<img src="./images/more-o.png" alt="" class="more">-->
+        </div>
+    </div>
+
+</div>
+
+<!--食物详情介绍-->
+<div class="des">
+    <div class="des-in">
+        <div class="des-box">
+            <h2></h2>
+            <div class="des-date"></div>
+            <div class="box-line"></div>
+            <img src="" alt="" class="food-img">
+            <!--<div class="food-img"></div>-->
+            <p></p>
+        </div>
+        <ul class="qlink">
+            <li>上一篇：<a href="" id="pre"></a></li>
+            <li>下一篇：<a href="" id="next"></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!--底部-->
+<div class="footer">
+    <div class="footIn">
+        <div class="quick">
+            <h4>快速链接</h4>
+            <div class="line"></div>
+            <ul class="foot-link">
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <!--<br>-->
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+            </ul>
+        </div>
+        <div class="connect">
+            <h4>联系我们</h4>
+            <div class="line"></div>
+            <ul class="foot-conn">
+                <li class="iconfont icon-weizhi">&nbsp;福州市福州地区大学新区学园路2号</li>
+                <li class="iconfont icon-youxiang">&nbsp;hahah@yummy.com</li>
+                <li class="iconfont icon-weibiaoti-">&nbsp;800-820-8820</li>
+            </ul>
+        </div>
+        <div class="subscribe">
+            <h4>关注我们</h4>
+            <div class="line"></div>
+            <ul class="foot-subscript">
+                <li><a href="#"></a></li>
+                <li><a href="#" id="wx"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul><br><br>
+            <img src="./images/qrscan.png" alt="" class="scan" id="scanImg">
+        </div>
+    </div>
+</div>
+<!--返回顶部-->
+<div class="back-to" id="toolBackTop">
+    <a title="返回顶部"  href="#top" class="back-top"></a>
+</div>
+
+
+</body>
+
+<script src="js/index.js"></script>
+<script>
+
+    $(function () {
+        $('#wx').hover(function () {
+            $('#scanImg').show()
+        },function () {
+            $('#scanImg').hide()
+        });
+        $('.back-top').onclick = function () {
+            window.scrollTo(0,0);
+            return false;
+        }
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+        var limitsw = (sw - 840) / 2 - 80;  //距离右侧距离
+        if (limitsw > 0){
+            limitsw = parseInt(limitsw);
+            bt.css("right",limitsw/8);
+        }
+
+        $(window).scroll(function() {
+            var st = $(window).scrollTop();
+            if(st > 300){
+                bt.show();
+            }else{
+                bt.hide();
+            }
+        });
+
+    //des
+        console.log(location.search.split('='));
+        console.log(location.search.split('&'));
+        //
+        // var page = parseInt(location.search.split('&'))[0].split('=')[1];
+        // var id=parseInt(location.search.split('&'))[1].split('=')[1];
+
+        // var page = (location.search.split('&'))[0].split('=')[1];
+        var id =parseInt((location.search.split('='))[1]);
+        // console.log(page)
+        console.log(id);
+        axios.get('https://mock-api.com/Gzq27OgW.mock/list')
+            .then(function(res){
+                console.log(res.data)
+                var a=res.data[id];
+                // console.log(res.data.length-1)
+                $('.des-box h2').html(a.title);
+                $('.des-box .des-date').html("发布时间："+a.date);
+                $('.food-img').prop('src', a.img);
+                $('.des-box p').html(a.description);
+                if(id==0){
+                    $('#pre').html("无");
+                    $('#pre').attr('disabled',true).css("pointer-events","none");  ;
+                    $('#next').html(res.data[1].title);
+                    $('#next').attr('href', 'news-detail.html?id=1');
+                };
+                if(id==res.data.length-1){
+                    var nowId = id-1;
+                    $('#pre').html(res.data[nowId].title);
+                    $('#pre').attr('href', 'news-detail.html?id='+nowId);
+                    $('#next').html("无");
+                    $('#next').attr('disabled',true).css("pointer-events","none");
+                };
+                if(id>0 && id<res.data.length-1){
+                    var preId = id-1;
+                    var nextId = id+1;
+                    console.log(nextId)
+                    $('#pre').html(res.data[preId].title);
+                    $('#next').html(res.data[nextId].title);
+                    $('#next').attr('href', 'news-detail.html?id='+nextId);
+                    $('#pre').attr('href', 'news-detail.html?id='+preId);
+                }
+
+            }).catch(function(res){
+            console.log('error',res);
+
+        })
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/news.css">
+    <title>企业站</title>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <!--<script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>-->
+    <script src="js/axios.min.js"></script>
+    <script src="js/layui.js"></script>
+
+
+
+</head>
+<body>
+<body>
+<!--头部-->
+<div class="header" id="top">
+    <div class="headerIn">
+        <!--class="iconfont icon-food"-->
+        <h1 class="left"><a href="index.html" ></a></h1>
+        <div class="right">
+            <ul class="menu clearfix">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="news.html">美食学堂</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <!--<img src="./images/more-o.png" alt="" class="more">-->
+        </div>
+    </div>
+
+</div>
+<!--新闻列表-->
+<div class="news">
+    <div class="newsIn">
+        <div class="lesson">美食学堂</div>
+        <div class="box-line"></div>
+        <div id="boxIn">
+
+        </div>
+        <!--<div class="col-sm-6 col-md-4">-->
+        <!--<div class="newsBox">-->
+        <!--<img src="" alt="">-->
+        <!--<div class="title"><a href="#">标题</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-md-4">-->
+        <!--<div class="newsBox">-->
+        <!--<img src="" alt="">-->
+        <!--<div class="title"><a href="#">标题</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-md-4">-->
+        <!--<div class="newsBox">-->
+        <!--<img src="" alt="">-->
+        <!--<div class="title"><a href="#">标题</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-md-4">-->
+        <!--<div class="newsBox">-->
+        <!--<img src="" alt="">-->
+        <!--<div class="title"><a href="#">标题</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-md-4">-->
+        <!--<div class="newsBox">-->
+        <!--<img src="" alt="">-->
+        <!--<div class="title"><a href="#">标题</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-sm-6 col-md-4">-->
+        <!--<div class="newsBox">-->
+        <!--<img src="" alt="">-->
+        <!--<div class="title"><a href="#">标题</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="page">
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="pn">
+                    <!--<li>-->
+                    <!--<a href="#" aria-label="Previous">-->
+                    <!--<span aria-hidden="true">&laquo;</span>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <!--<li>-->
+                    <!--<a href="#" aria-label="Next">-->
+                    <!--<span aria-hidden="true">&raquo;</span>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="footIn">
+        <div class="quick">
+            <h4>快速链接</h4>
+            <div class="line"></div>
+            <ul class="foot-link">
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <!--<br>-->
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+            </ul>
+        </div>
+        <div class="connect">
+            <h4>联系我们</h4>
+            <div class="line"></div>
+            <ul class="foot-conn">
+                <li class="iconfont icon-weizhi">&nbsp;福州市福州地区大学新区学园路2号</li>
+                <li class="iconfont icon-youxiang">&nbsp;hahah@yummy.com</li>
+                <li class="iconfont icon-weibiaoti-">&nbsp;800-820-8820</li>
+            </ul>
+        </div>
+        <div class="subscribe">
+            <h4>关注我们</h4>
+            <div class="line"></div>
+            <ul class="foot-subscript">
+                <li><a href="#"></a></li>
+                <li><a href="#" id="wx"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul><br><br>
+            <img src="./images/qrscan.png" alt="" class="scan" id="scanImg">
+        </div>
+    </div>
+</div>
+
+<!--返回顶部-->
+<div class="back-to" id="toolBackTop">
+    <a title="返回顶部"  href="#top" class="back-top"></a>
+</div>
+
+</body>
+<script src="js/layui.js"></script>
+<script>
+
+    $(function () {
+        $('#wx').hover(function () {
+            $('#scanImg').show()
+        }, function () {
+            $('#scanImg').hide()
+        });
+        //返回顶部
+        $('.back-top').onclick = function () {
+            window.scrollTo(0,0);
+            return false;
+        }
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+        var limitsw = (sw - 840) / 2 - 80;  //距离右侧距离
+        if (limitsw > 0){
+            limitsw = parseInt(limitsw);
+            bt.css("right",limitsw/8);
+        }
+
+        $(window).scroll(function() {
+            var st = $(window).scrollTop();
+            if(st > 300){
+                bt.show();
+            }else{
+                bt.hide();
+            }
+        });
+
+        function pageGet(page) {
+            axios.get('https://mock-api.com/Gzq27OgW.mock/list?page='+page)
+                .then(function (res) {
+                    // context.dispatch('loading', false, {root: true});
+                    var a = res.data;
+
+                    // console.log(a);
+                    // now[page] = res.data.slice((page-1)*6,(page-1)*6+6);
+                    // console.log(now[page])
+                    // $.each(now[page], function (x, ele) {
+                    for(var index in a){
+                        var boxhtml =`<div class="col-md-4 cBox">
+                                        <div class="newsBox">
+                                            <img src="${a[index].img}" alt="">
+                                            <div class="title"><a href="news-detail.html?id=${a[index].id}">${a[index].title}</a></div>
+                                        </div>
+                                    </div>`;
+                        $('#boxIn').append(boxhtml);
+                    }
+                }).catch(function (res) {
+                console.log('error', res);
+            })
+        }
+        $('#pn li a').click(function () {
+            $('#boxIn').html('');
+            pageGet(parseInt($(this).text()));
+
+
+        });
+        pageGet(1);
+    })
+</script>
+</body>
+</html>

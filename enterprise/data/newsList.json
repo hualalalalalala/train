@@ -1,0 +1,112 @@
+{
+    "food": [
+      {
+        "title":"酸碱食物不宜放味精",
+        "date":"2020-6-4",
+        "img": "./images/news/knowledge1.png",
+        "description": "酸性食物放味精同时高温加热，虽然无毒，却没有一点鲜味了。在碱性食物中，当溶液处于碱性条件下，是无鲜味的。"
+      },
+      {
+        "title":"烧鸡蛋不宜放味精",
+        "date":"2020-6-3",
+        "img": "./images/news/knowledge2.png",
+        "description": "鸡蛋本身含有与味精相同的成分谷氨酸。因此，炒鸡蛋时没有必要再放味精，味精会破坏鸡蛋的天然鲜味，当然更是一种浪费。"
+      },
+      {
+        "title":"未煮透的黄豆不宜吃",
+        "date":"2020-6-3",
+        "img": "./images/news/knowledge3.png",
+        "description": "黄豆中含有一种会妨碍人体中胰蛋白酶活动的物质。人们吃了未煮透的黄豆，对黄豆蛋白质难以消化和吸收，甚至会发生腹泻。而食用熟透的黄豆，则不会出问题。"
+      },
+      {
+        "title":"肉、骨烧煮忌加冷水",
+        "date":"2020-6-3",
+        "img": "./images/news/knowledge4.png",
+        "description": "肉、骨中含有大量的蛋白质和脂肪，烧煮中突然加冷水，蛋白质与脂肪会迅速凝固，肉、骨的空隙也会聚然收缩而不会变烂，肉、骨本身的鲜味也会受到影响。"
+      },
+      {
+        "title":"油锅不宜烧得过旺",
+        "date":"2020-6-3",
+        "img": "./images/news/knowledge5.png",
+        "description": "经常食用烧得过旺的油炸菜，容易产生低酸胃或胃溃疡，如不及时治疗还会发生癌变。"
+      },
+      {
+        "title":"你知道炒肉时放盐的较佳之间吗",
+        "date":"2020-6-3",
+        "img": "./images/news/knowledge6.png",
+        "description": "盐的主要成分氯化钠，易使肉中的蛋白质发生凝固，使肉块缩小，肉变质硬，且不易烧烂。"
+      },
+      {
+        "title":"水果蛋糕制作过程",
+        "date":"2020-6-3",
+        "img": "./images/news/cake1.png",
+        "description": "准备食材：鸡蛋x3、低筋面粉60g"
+      },
+      {
+        "title":"手把手教你戚风蛋糕",
+        "date":"2020-6-3",
+        "img": "./images/news/cake2.png",
+        "description": "准备食材：鸡蛋x3、低筋面粉60g"
+      },
+      {
+        "title":"草莓蛋糕简易过程",
+        "date":"2020-6-3",
+        "img": "./images/news/cake3.png",
+        "description": "准备食材：鸡蛋x3、低筋面粉60g"
+      },
+      {
+        "title":"芒果蛋糕制作过程",
+        "date":"2020-6-3",
+        "img": "./images/news/cake4.png",
+        "description": "准备食材：鸡蛋x3、低筋面粉60g"
+      },
+      {
+        "title":"草莓蛋糕制作教程",
+        "date":"2020-6-3",
+        "img": "./images/news/cake5.png",
+        "description": "准备食材：鸡蛋x3、低筋面粉60g"
+      },
+      {
+        "title":"曲奇饼教程",
+        "date":"2020-6-3",
+        "img": "./images/news/cake6.png",
+        "description": "准备食材：鸡蛋x3、低筋面粉60g"
+      },
+      {
+        "title":"抹茶制作教学",
+        "date":"2020-6-3",
+        "img": "./images/news/milktea1.png",
+        "description": "准备食材：香蕉一根，酸奶一瓶（500毫升），冰糖"
+      },
+      {
+        "title":"橘子汁制作过程",
+        "date":"2020-6-3",
+        "img": "./images/news/milktea2.png",
+        "description": "准备食材：香蕉一根，酸奶一瓶（500毫升），冰糖"
+      },
+      {
+        "title":"香芒冰茶",
+        "date":"2020-6-3",
+        "img": "./images/news/milktea3.png",
+        "description": "准备食材：香蕉一根，酸奶一瓶（500毫升），冰糖"
+      },
+      {
+        "title":"冰糖百香果汁",
+        "date":"2020-6-3",
+        "img": "./images/news/milktea4.png",
+        "description": "准备食材：香蕉一根，酸奶一瓶（500毫升），冰糖"
+      },
+      {
+        "title":"柠檬果汁调制",
+        "date":"2020-6-3",
+        "img": "./images/news/milktea5.png",
+        "description": "准备食材：香蕉一根，酸奶一瓶（500毫升），冰糖"
+      },
+      {
+        "title":"果汁汽水调制过程",
+        "date":"2020-6-3",
+        "img": "./images/news/milktea6.png",
+        "description": "准备食材：香蕉一根，酸奶一瓶（500毫升），冰糖"
+      }
+    ]
+}

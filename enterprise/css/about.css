@@ -1,0 +1,230 @@
+body,html {
+	font-size: 14px;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+/*头部*/
+.header {
+	width: 100%;
+	background-color: #f2f2f4;
+}
+.header .headerIn {
+	width: 1200px;
+	height: 70px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0 100px;
+	display: flex;
+	justify-content: space-between;
+}
+.headerIn .left {
+	margin: auto 0;
+}
+.headerIn .left a {
+	display: block;
+    background-image: url("../images/mylogo.png");
+    width: 64px;
+	height: 64px;
+	opacity: 0.7;
+}
+.headerIn .left a:hover {
+	opacity: 1;
+}
+.headerIn .menu {
+	height: 70px;
+	float: right;
+	margin-bottom: -10px;
+}
+/*.headerIn .more {*/
+/*width: 50px;*/
+/*height: 50px;*/
+/*margin-top: 15px;*/
+/*display: none;*/
+/*}*/
+.headerIn .menu li {
+	float: left;
+	line-height: 70px;
+	font-size: 18px;
+	margin-left: 30px;
+}
+.headerIn .menu li a {
+	text-decoration: none;
+	color: #000;
+	opacity: 0.5;
+}
+.headerIn .menu li a:hover {
+	opacity: 1;
+}
+/*内容*/
+.content {
+	width: 100%;
+}
+.content .contentIn{
+	width: 1200px;
+	margin: 0 auto;
+	display: flex;
+    padding: 0 20px;
+    box-sizing: border-box;
+	justify-content: space-between;
+}
+.contentIn .content-left {
+	margin-top: 10px;
+	width: 600px;
+}
+/*地图*/
+.content-left .map {
+	margin-top: 15px;
+	width: 550px;
+	height: 315px;
+}
+/*介绍*/
+.contentIn .content-right {
+	width: 600px;
+}
+.content-right .introduce {
+	text-indent: 2em;
+	font-size: 16px;
+    line-height: 30px;
+}
+.content-right .conn {
+	margin-top: 35px;
+	line-height: 40px;
+}
+.content-right .conn li {
+	font-size: 18px;
+}
+#r-result {
+	width: 100%;
+}
+form .sel {
+	width: 100%;
+	margin: 20px auto
+}
+form .sel span {
+	font-size: 16px;
+	color: #000;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	padding: 0 10px
+}
+form.sel select {
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	color: #000;
+	font-size: 14px;
+	padding: 0 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	cursor: pointer;
+}
+form.sel input {
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	color: #000;
+	font-size: 14px;
+	border-radius: 5px;
+	display: inline-block;
+	-webkit-border-radius: 5px;
+	cursor: pointer;
+	background: #fff;
+	border: 1px #ccc solid;
+	padding: 0 10px
+}
+
+
+
+/*底部*/
+.footer {
+    width: 100%;
+    background-color: whitesmoke;
+    margin-top: 10px;
+}
+.footer .footIn {
+    width: 1200px;
+    margin: 0 auto;
+    height: 180px;
+    display: flex;
+    justify-content: space-around;
+}
+.footer .footIn .quick {
+    width: 250px;
+    height: 100%;
+}
+/*.footer .footIn .quick ul{*/
+/*float: left;*/
+/*}*/
+.footer .footIn h4 {
+    margin-left: 10px;
+}
+.footer .footIn .line {
+    width: 80px;
+    height: 3px;
+    background-color: #ff5252;
+    margin-left: 10px;
+}
+.footer .footIn ul {
+    margin-top: 10px;
+}
+.footer .footIn .quick ul li{
+    margin-left: 10px;
+    line-height: 40px;
+    float: left;
+}
+.quick ul li a {
+    text-decoration: none;
+    color: #262626;
+    opacity: 0.5;
+}
+.quick ul li a:hover{
+    opacity: 1;
+}
+.footer .footIn .connect {
+    width: 250px;
+    height: 100%;
+}
+.footer .footIn .connect .foot-conn {
+    line-height: 30px;
+}
+.connect .foot-conn li {
+    font-size: 14px;
+    color: #262626;
+}
+.footer .footIn .subscribe {
+    width: 250px;
+    height: 100%;
+}
+.subscribe .foot-subscript li {
+    float: left;
+    margin-left: 20px;
+}
+.subscribe .foot-subscript li a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+}
+.subscribe .foot-subscript li:first-child a{
+    background: url("../images/QQlogo.png") 0 0 no-repeat;
+}
+.subscribe .foot-subscript li:nth-child(2) a {
+    background: url("../images/wxlogo.png") 0 0 no-repeat;
+}
+.subscribe .foot-subscript li:nth-child(3) a {
+    background: url("../images/tblogo.png") 0 0 no-repeat;
+}
+.subscribe .foot-subscript li:last-child a {
+    background: url("../images/wblogo.png") 0 0 no-repeat;
+}
+.subscribe img {
+    display: none;
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+}

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <title>企业站</title>
+    <script src="./js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<body>
+<!--头部-->
+<div class="header" id="top">
+    <div class="headerIn">
+        <!--class="iconfont icon-food"-->
+        <h1 class="left">
+            <a href="index.html" ></a>
+        </h1>
+        <div class="right">
+            <ul class="menu clearfix">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="news.html">美食学堂</a></li>
+                <li><a href="about.html">关于我们</a></li>
+            </ul>
+            <!--<img src="./images/more-o.png" alt="" class="more">-->
+        </div>
+    </div>
+
+</div>
+<!--轮播图-->
+<div class="banner">
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播（Carousel）指标 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- 轮播（Carousel）项目 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="./images/banner1.jpg" alt="First slide">
+            </div>
+            <div class="item">
+                <img src="./images/banner3.jpg" alt="Second slide">
+            </div>
+            <div class="item">
+                <img src="./images/banner2.jpg" alt="Third slide">
+            </div>
+        </div>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">›
+        </a>
+    </div>
+</div>
+<!--招牌推荐-->
+<!--id="hotFood"-->
+<div class="recommend" >
+    <div class="recommendIn">
+        <h2>招牌推荐</h2>
+        <div class="box-line"></div>
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#menu1" data-toggle="tab">点心</a></li>
+            <li role="presentation"><a href="#menu2" data-toggle="tab">西餐</a></li>
+            <!--<li role="presentation"><a href="#menu3" data-toggle="tab">点心</a></li>-->
+        </ul>
+        <div class="tab-content">
+            <div id="menu1" class="container tab-pane active">
+                <div class="food">
+                    <img src="./images/hotFood1.png" alt="" class="food-img">
+                    <div class="food-info">
+                        <span>糖蒸酥酪</span>原料：牛奶，甜米酒，白砂糖
+                    </div>
+                </div>
+                <div class="food">
+                    <img src="./images/hotFood2.png" alt="" class="food-img">
+                    <div class="food-info">
+                        <span>香蕉爆浆吐司</span>原料:香蕉、芝士、吐司、生菜、小番茄
+                    </div>
+                </div>
+                <div class="food">
+                    <img src="./images/hotFood3.png" alt="" class="food-img">
+                    <div class="food-info">
+                        <span>美式牛扒</span>原料：香芹叶、牛排 、黑椒碎、黄油
+                    </div>
+                </div>
+                <div class="food">
+                    <img src="./images/hotFood4.png" alt="" class="food-img">
+                    <div class="food-info">
+                        <span>什锦冷盘</span>原料：牛奶，甜米酒，白砂糖
+                    </div>
+                </div>
+            </div>
+            <div id="menu2" class="container tab-pane ">
+                <div class="food">
+                    <img src="./images/hotFood3.png" alt="" class="food-img">
+                    <div class="food-info">
+                        <span>美式牛扒</span>原料：香芹叶、牛排 、黑椒碎、黄油
+                    </div>
+                </div>
+                <div class="food">
+                    <img src="./images/hotFood4.png" alt="" class="food-img">
+                    <div class="food-info">
+                        <span>什锦冷盘</span>原料：牛奶，甜米酒，白砂糖
+                    </div>
+                </div>
+            </div>
+            <!--<div id="menu3" class="container tab-pane fade">-->
+            <!--<div class="food">-->
+            <!--<img src="./images/hotFood1.png" alt="" class="food-img">-->
+            <!--<div class="food-info">-->
+            <!--<span>糖蒸酥酪</span><br><br>原料：牛奶，甜米酒，白砂糖-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="food">-->
+            <!--<img src="./images/hotFood1.png" alt="" class="food-img">-->
+            <!--<div class="food-info">-->
+            <!--<span>糖蒸酥酪</span><br><br>原料：牛奶，甜米酒，白砂糖-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <!--<table class="recommend-list">-->
+        <!--<tr>-->
+            <!--<td><img src="./images/hotFood1.png" alt=""></td>-->
+            <!--<td class="recommend-info">-->
+                <!--<div class="food-title">糖蒸酥酪</div>-->
+                <!--<br>-->
+                <!--<div class="food-info">介绍：糖蒸酥酪，样式简单，给人食欲，是一种特制的酸奶，而且也是地道的北京风味小吃。<br>据专家考证，《红楼梦》里出现的糖蒸酥酪，就是一种奶制品，主要用羊奶、牛奶等制成，而且也是地道的北京风味小吃。<br><br>原料：牛奶，甜米酒，白砂糖</div>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>-->
+            <!--<td class="recommend-info">-->
+                <!--<div class="food-title">香蕉爆浆吐司</div>-->
+                <!--<br>-->
+                <!--<div class="food-info">介绍：吐司面包是西式面包的一种，在欧美式早餐中常见，在香港的茶餐厅也有，原料是方包，放在烤面包机（香港称作“多士炉”）烤至香口，取出，在方包的一边批上奶油、牛油、果酱等配料，用两块方包夹起来便成，是热食。<br><br>原料:香蕉、芝士、吐司、生菜、小番茄</div>-->
+            <!--</td>-->
+            <!--<td><img src="./images/hotFood2.png" alt=""></td>-->
+        <!--</tr>-->
+    <!--</table>-->
+</div>
+<!--美食学堂-->
+<div class="news">
+</div>
+<!--本店优势-->
+<div class="advantage">
+    <div class="advantageIn">
+        <h2>本店优势</h2>
+        <div class="box-line"></div>
+        <div class="box">
+            <div class="adv-box">
+                <img src="./images/icon-chef.png" alt="">
+                <div class="adv-info"><strong>资深大厨</strong><br><br>
+                    前三星米其林大厨，带给你不一样得味蕾享受
+                </div>
+            </div>
+            <div class="adv-box">
+                <img src="./images/icon-chair.png" alt="">
+                <div class="adv-info"><strong>环境舒适</strong><br><br>
+                    我们的店铺装修简约，给你一个舒适的用餐环境
+                </div>
+            </div>
+            <div class="adv-box">
+                <img src="./images/icon-tie.png" alt="">
+                <div class="adv-info"><strong>服务周到</strong><br><br>
+                    我们的员工皆受过岗前培训，人人都是优秀的服务员
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--厨师风采-->
+<div class="cook">
+    <div class="cookIn">
+        <h2>厨师风采</h2>
+        <div class="box-line"></div>
+        <div class="box">
+            <div class="cook-box">
+                <img src="./images/cook-head-3.png" alt="">
+                <div class="cook-info"><strong>谢某某</strong><br><br>
+                    前三星米其林大厨
+                </div>
+            </div>
+            <div class="cook-box">
+                <img src="./images/cook-head-1.png" alt="">
+                <div class="cook-info"><strong>游某某</strong><br><br>
+                    国家金牌糕点师傅
+                </div>
+            </div>
+            <div class="cook-box">
+                <img src="./images/cook-head-2.png" alt="">
+                <div class="cook-info"><strong>林某某</strong><br><br>
+                    某某餐饮创始人
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="footer">
+    <div class="footIn">
+        <div class="quick">
+            <h4>快速链接</h4>
+            <div class="line"></div>
+            <ul class="foot-link">
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <!--<br>-->
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">网站首页</a></li>
+            </ul>
+        </div>
+        <div class="connect">
+            <h4>联系我们</h4>
+            <div class="line"></div>
+            <ul class="foot-conn">
+                <li class="iconfont icon-weizhi">&nbsp;福州市福州地区大学新区学园路2号</li>
+                <li class="iconfont icon-youxiang">&nbsp;hahah@yummy.com</li>
+                <li class="iconfont icon-weibiaoti-">&nbsp;800-820-8820</li>
+            </ul>
+        </div>
+        <div class="subscribe">
+            <h4>关注我们</h4>
+            <div class="line"></div>
+            <ul class="foot-subscript">
+                <li><a href="#"></a></li>
+                <li><a href="#" id="wx"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul><br><br>
+            <img src="./images/qrscan.png" alt="" class="scan" id="scanImg">
+        </div>
+    </div>
+</div>
+<!--返回顶部-->
+<div class="back-to" id="toolBackTop">
+    <a title="返回顶部"  href="#top" class="back-top"></a>
+</div>
+
+
+</body>
+
+<script src="js/index.js"></script>
+<script>
+
+    $(function () {
+        // $(".right .more").click(function() {//显示或隐藏下方导航列表
+        //     $(".right .menu").slideDown(1000);
+        // });
+        $('#wx').hover(function () {
+            $('#scanImg').show()
+        },function () {
+            $('#scanImg').hide()
+        });
+        $('.back-top').onclick = function () {
+            window.scrollTo(0,0);
+            return false;
+        }
+        var bt = $('#toolBackTop');
+        var sw = $(document.body)[0].clientWidth;
+        var limitsw = (sw - 840) / 2 - 80;  //距离右侧距离
+        if (limitsw > 0){
+            limitsw = parseInt(limitsw);
+            bt.css("right",limitsw/8);
+        }
+
+        $(window).scroll(function() {
+            var st = $(window).scrollTop();
+            if(st > 300){
+                bt.show();
+            }else{
+                bt.hide();
+            }
+        });
+    })
+
+</script>
+</body>
+</html>
