@@ -143,6 +143,7 @@ form.sel input {
 
 /*底部*/
 .footer {
+	margin-top: -180px;
     width: 100%;
     background-color: whitesmoke;
     margin-top: 10px;
