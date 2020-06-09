@@ -1,5 +1,5 @@
 body,html {
-    width: 1200px;
+    min-width: 1200px;
     margin: 0 auto;
 }
 ul {
@@ -80,7 +80,7 @@ a {
 .content-left .map {
 	margin-top: 15px;
 	width: 550px;
-	height: 400px;
+	height: 450px;
 }
 /*介绍*/
 .contentIn .content-right {
@@ -143,8 +143,6 @@ form.sel input {
 
 /*底部*/
 .footer {
-	position: absolute;
-	bottom: 0;
     width: 100%;
     background-color: whitesmoke;
     margin-top: 10px;
