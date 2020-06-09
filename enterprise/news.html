@@ -43,42 +43,36 @@
         <div class="lesson">美食学堂</div>
         <div class="box-line"></div>
         <div class="boxIn">
-            <div class="newsBox">
+            <a class="newsBox">
                 <img src="" alt="">
                 <div class="title">
-                    <a href="#">标题</a>
                 </div>
-            </div>
-            <div class="newsBox">
+            </a>
+            <a class="newsBox">
                 <img src="" alt="">
                 <div class="title">
-                    <a href="#">标题</a>
                 </div>
-            </div>
-           <div class="newsBox">
+            </a>
+           <a class="newsBox">
                 <img src="" alt="">
                 <div class="title">
-                    <a href="#">标题</a>
                 </div>
-            </div>
-            <div class="newsBox">
+            </a>
+            <a class="newsBox">
                 <img src="" alt="">
                 <div class="title">
-                    <a href="#">标题</a>
                 </div>
-            </div>
-            <div class="newsBox">
+            </a>
+            <a class="newsBox">
                 <img src="" alt="">
                 <div class="title">
-                    <a href="#">标题</a>
                 </div>
-            </div>
-            <div class="newsBox">
+            </a>
+            <a class="newsBox">
                 <img src="" alt="">
                 <div class="title">
-                    <a href="#">标题</a>
                 </div>
-            </div>
+            </a>
         </div>
            
         
@@ -186,10 +180,8 @@
                     // context.dispatch('loading', false, {root: true});
                     $.each(now, function (index, ele) {
                         $('.newsBox').eq(index).find('img').prop('src', ele.img)
-                        $('.newsBox').eq(index).find('a').html(ele.title)
-                        $('.newsBox').eq(index).click(function () {
-                            window.location.href = `news-detail.html?id=${ele.id}`;
-                        })
+                        $('.newsBox').eq(index).find('.title').html(ele.title)
+                        $('.newsBox').eq(index).prop('href', `news-detail.html?id=${ele.id}`) ;
 
                     })
                     // for(var index in a){

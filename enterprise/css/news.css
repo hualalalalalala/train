@@ -1,5 +1,6 @@
 body,html {
-    width: 100%;
+    width: 1200px;
+    margin: 0 auto;
 }
 /*头部*/
 .header {
@@ -138,9 +139,12 @@ body,html {
 }
 .boxIn .newsBox {
     text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #000;
 }
 .newsBox .title {
-    margin: 10px auto 20px auto;
+    margin: 10px auto 30px auto;
 }
 .newsBox .title a{
     text-decoration: none;

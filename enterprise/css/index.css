@@ -32,6 +32,10 @@
         /*opacity: 1;*/
     /*}*/
 /*}*/
+body,html {
+    width: 1200px;
+    margin: 0 auto;
+}
 .header {
     width: 100%;
     background-color: #f2f2f2;
