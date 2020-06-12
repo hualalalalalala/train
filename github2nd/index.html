@@ -78,6 +78,11 @@
                 </div>
             }
         }
+        class Footer extends React.Component {
+            render () {
+                return <div style={{textAlign:'center',backgroundColor:'#ccc'}}>{this.props.children}</div>
+            }
+        }
         class APP extends React.Component { 
             constructor(props){
                 super(props);
@@ -105,15 +110,13 @@
             // }
             tabsToggle = async(index) => {
                 this.setState({ currentIndex: index,isLoad:true})
-                const currentUrl = this.state.linkdata[index].to;
-                console.log(currentUrl,'isLoad是'+this.state.isLoad)
+                const currentUrl = this.state.linkdata[index].to
                 await axios.get(currentUrl)
                 .then ((res)=>{
                     this.setState({
                         nowList: res.data.items,
                         isLoad:false
                     })
-                    // console.log(document.body.scrollHeight)
                 })
                 .catch((err)=>{
                     console.log(err,'error')
@@ -136,7 +139,7 @@
                     console.log(err)
                     this.setState({isLoad:false})
                 });
-                // 工程化后用组件 不写了
+                // 工程化后用组件
                 // window.addEventListener('scroll',this.bindHandleScroll) 
             }
             // bindHandleScroll=()=>{
@@ -175,7 +178,8 @@
             render () {
                 return <div>
                 <Header linkdata={this.state.linkdata} getToggle={this.tabsToggle}  currentIndex={this.state.currentIndex} />
-                <Content currentList={this.state.nowList} isLoad={this.state.isLoad}/>   
+                <Content currentList={this.state.nowList} isLoad={this.state.isLoad}/>  
+                <Footer><span>版权所有 &copy; xxn</span></Footer>
                 </div>
             }
         }
