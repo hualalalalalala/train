@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github热门项目</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body, html {
+            min-width: 1200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script type="text/babel">
+        class Header extends React.Component {
+            constructor(props){
+                super(props);
+            }
+            render () { 
+                // console.log(this.props.data);
+                const list = this.props.linkdata.map((e,key)=>
+                    <li key={key} onClick={() => { this.props.getToggle(key)}} style={{borderRadius:'15px',margin:'0 15px',backgroundColor: this.props.currentIndex === key ? "pink" : "white"}}  ><a href="#" style={{textDecoration:'none',color: '#000'}}>{e.name}</a></li>
+                )
+                return <ul style={{listStyle:'none',fontSize:'30px',display:'flex', justifyContent: "center",marginTop:'30px'}} >{list}</ul>
+            }
+        }
+        class Content extends React.Component {
+            constructor(props){
+                super(props);
+                // this.state={
+                //     hover: false,
+                // }
+                // this.onMouseEnter = this.onMouseEnter.bind(this);
+                // this.onMouseLeave = this.onMouseLeave.bind(this);
+            }
+            // onMouseEnter(){
+            //     this.setState({
+            //         hover: true,
+            //     });
+            //     console.log('移入')
+            // }
+
+            // onMouseLeave(){
+            //     this.setState({
+            //         hover: false,
+            //     })
+            // }
+            render () { 
+                // console.log(this.state.hover)
+                const list = this.props.currentList.map((e,key)=>
+                    <div style={{backgroundColor:'rgba(0,0,0,0.08)',width:'23%',padding:'20px',borderRadius:'20px',boxSizing: 'border-box',margin:'10px 5px'}}>
+                        <div style={{textAlign:'center'}}>
+                            <p style={{fontWeight:'bold',fontSize:'24px',marginBottom:'10px'}}>#{key+1}</p>
+                            <img src={e.owner.avatar_url} style={{width:'50%'}}/>
+                            <p style={{marginTop:'20px'}}><a href={e.html_url} style={{fontWeight:'bold',textDecoration:'none',color:'rgba(0,0,0,0.65)'}} >{e.name}/{e.owner.login}</a></p>
+                        </div>
+                        <ul style={{listStyle:'none',marginTop:'30px'}}>
+                            <li><i style={{color:'rgb(255, 191, 116)'}} className='fa fa-user fa-fw fa-lg'></i><a href={e.owner.html_url} style={{textDecoration:'none',color:'rgba(0,0,0,0.65)'}}>{e.owner.login}</a></li>
+                            <li><i style={{color:'rgb(255, 215, 0)'}} className='fa fa-star fa-fw fa-lg'></i>{e.watchers} stars</li>
+                            <li><i style={{color:'rgb(129, 195, 245)'}} className='fa fa-link fa-fw fa-lg'></i>{e.forks_count} forks</li>
+                            <li><i style={{color:'rgb(241, 138, 147)'}} className='fa fa-exclamation-triangle fa-fw fa-lg'></i>{e.open_issues} Open issues</li>
+                        </ul>
+                    </div> 
+                )
+                return <div >{this.props.isLoad?<p style={{textAlign:'center'}}><i className="fa fa-refresh fa-spin fa-3x fa-fw"></i></p>:''}
+                    <div style={{display:'flex',justifyContent:'space-around',flexFlow: "row wrap",marginTop:'30px'}}>{list}</div>
+                </div>
+            }
+        }
+        class APP extends React.Component { 
+            constructor(props){
+                super(props);
+                this.state={
+                    currentIndex: 0,
+                    linkdata: [
+                        { name: 'All', to: 'http://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories' },
+                        { name: 'JavaScript', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:javascript&sort=stars&order=desc&type=Repositories' },
+                        { name: 'Ruby', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:ruby&sort=stars&order=desc&type=Repositories' },
+                        { name: 'Java', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:java&sort=stars&order=desc&type=Repositories' },
+                        { name: 'CSS', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:css&sort=stars&order=desc&type=Repositories' },
+                        { name: 'Python', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:python&sort=stars&order=desc&type=Repositories' }
+                    ],
+                    nowList: [],
+                    // isButtom : false,
+                    // pageNo: 1,
+                    isLoad: false,
+
+
+                }
+                this.tabsToggle = this.tabsToggle.bind(this);
+            }
+            // componentWillUnmount() {
+                
+            // }
+            tabsToggle = async(index) => {
+                this.setState({ currentIndex: index,isLoad:true})
+                const currentUrl = this.state.linkdata[index].to;
+                console.log(currentUrl,'isLoad是'+this.state.isLoad)
+                await axios.get(currentUrl)
+                .then ((res)=>{
+                    this.setState({
+                        nowList: res.data.items,
+                        isLoad:false
+                    })
+                    // console.log(document.body.scrollHeight)
+                })
+                .catch((err)=>{
+                    console.log(err,'error')
+                    this.setState({isLoad:false})
+                })
+            }
+            // componentWillUnmount(){
+		    //     window.removeEventListener('scroll', this.bindHandleScroll);
+		    // }
+            async componentDidMount() {
+                this.setState({isLoad:true})
+                await axios.get('http://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories')
+                .then ((res)=>{
+                    this.setState({
+                        nowList:res.data.items,
+                        isLoad:false
+                    })                                                                      
+                })
+                .catch((err)=>{
+                    console.log(err)
+                    this.setState({isLoad:false})
+                });
+                // 工程化后用组件 不写了
+                // window.addEventListener('scroll',this.bindHandleScroll) 
+            }
+            // bindHandleScroll=()=>{
+            //     let scrollTop = 0, clientHeight = 0, scrollHeight = 0;
+            //     scrollTop = document.documentElement.scrollTop;
+            //     clientHeight = document.documentElement.clientHeight;
+            //     scrollHeight = document.documentElement.scrollHeight;
+            //     let heightDiff = scrollHeight-(scrollTop + clientHeight);   
+            //     console.log("scTop",scrollTop)
+            //     this.setState({
+            //         isButtom:heightDiff===0?true:false
+            //     })
+            //     if(this.state.isButtom) {
+            //         this.load(this.state.pageNo)
+            //     }
+            //     // console.log(this.state.isButtom)
+                
+            // }
+            // load = async(pageNo) => {
+            //     this.setState({isLoad:true});
+            //     this.cancelRequest;
+            //     await axios.get(`${this.state.linkdata[this.state.currentIndex].to}?page=${pageNo}`)
+            //     .then((res)=>{
+            //         this.setState({
+            //             nowList: [...this.state.nowList,...res.data.items],
+            //             // pageNo: this.state.pageNo+1,
+            //             isLoad:false,
+            //         })
+            //     })
+            //     .catch((err)=>{
+            //         console.log(err)
+            //         this.setState({isLoad:false})
+            //     })
+            // }
+            
+            render () {
+                return <div>
+                <Header linkdata={this.state.linkdata} getToggle={this.tabsToggle}  currentIndex={this.state.currentIndex} />
+                <Content currentList={this.state.nowList} isLoad={this.state.isLoad}/>   
+                </div>
+            }
+        }
+        ReactDOM.render (
+            <APP/>,
+            document.getElementById('container')
+        )
+    </script>
+</body>
+</html>
