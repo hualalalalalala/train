@@ -84,12 +84,12 @@
                 this.state={
                     currentIndex: 0,
                     linkdata: [
-                        { name: 'All', to: 'http://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories' },
-                        { name: 'JavaScript', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:javascript&sort=stars&order=desc&type=Repositories' },
-                        { name: 'Ruby', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:ruby&sort=stars&order=desc&type=Repositories' },
-                        { name: 'Java', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:java&sort=stars&order=desc&type=Repositories' },
-                        { name: 'CSS', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:css&sort=stars&order=desc&type=Repositories' },
-                        { name: 'Python', to: 'http://api.github.com/search/repositories?q=stars:%3E1+language:python&sort=stars&order=desc&type=Repositories' }
+                        { name: 'All', to: 'https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories' },
+                        { name: 'JavaScript', to: 'https://api.github.com/search/repositories?q=stars:%3E1+language:javascript&sort=stars&order=desc&type=Repositories' },
+                        { name: 'Ruby', to: 'https://api.github.com/search/repositories?q=stars:%3E1+language:ruby&sort=stars&order=desc&type=Repositories' },
+                        { name: 'Java', to: 'https://api.github.com/search/repositories?q=stars:%3E1+language:java&sort=stars&order=desc&type=Repositories' },
+                        { name: 'CSS', to: 'https://api.github.com/search/repositories?q=stars:%3E1+language:css&sort=stars&order=desc&type=Repositories' },
+                        { name: 'Python', to: 'https://api.github.com/search/repositories?q=stars:%3E1+language:python&sort=stars&order=desc&type=Repositories' }
                     ],
                     nowList: [],
                     // isButtom : false,
@@ -125,7 +125,7 @@
 		    // }
             async componentDidMount() {
                 this.setState({isLoad:true})
-                await axios.get('http://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories')
+                await axios.get('https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories')
                 .then ((res)=>{
                     this.setState({
                         nowList:res.data.items,
