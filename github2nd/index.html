@@ -13,6 +13,12 @@
             min-width: 1200px;
             height: auto;
         }
+        a {
+            color:rgba(0,0,0,0.65)
+        }
+        a:hover {
+            color: #1890ff;
+        }
     </style>
 </head>
 <body>
@@ -38,35 +44,17 @@
         class Content extends React.Component {
             constructor(props){
                 super(props);
-                // this.state={
-                //     hover: false,
-                // }
-                // this.onMouseEnter = this.onMouseEnter.bind(this);
-                // this.onMouseLeave = this.onMouseLeave.bind(this);
             }
-            // onMouseEnter(){
-            //     this.setState({
-            //         hover: true,
-            //     });
-            //     console.log('移入')
-            // }
-
-            // onMouseLeave(){
-            //     this.setState({
-            //         hover: false,
-            //     })
-            // }
             render () { 
-                // console.log(this.state.hover)
                 const list = this.props.currentList.map((e,key)=>
                     <div style={{backgroundColor:'rgba(0,0,0,0.08)',width:'23%',padding:'20px',borderRadius:'20px',boxSizing: 'border-box',margin:'10px 5px'}}>
                         <div style={{textAlign:'center'}}>
                             <p style={{fontWeight:'bold',fontSize:'24px',marginBottom:'10px'}}>#{key+1}</p>
                             <img src={e.owner.avatar_url} style={{width:'50%'}}/>
-                            <p style={{marginTop:'20px'}}><a href={e.html_url} style={{fontWeight:'bold',textDecoration:'none',color:'rgba(0,0,0,0.65)'}} >{e.name}/{e.owner.login}</a></p>
+                            <p style={{marginTop:'20px'}}><a href={e.html_url} style={{fontWeight:'bold',textDecoration:'none'}} >{e.name}/{e.owner.login}</a></p>
                         </div>
                         <ul style={{listStyle:'none',marginTop:'30px'}}>
-                            <li><i style={{color:'rgb(255, 191, 116)'}} className='fa fa-user fa-fw fa-lg'></i><a href={e.owner.html_url} style={{textDecoration:'none',color:'rgba(0,0,0,0.65)'}}>{e.owner.login}</a></li>
+                            <li><i style={{color:'rgb(255, 191, 116)'}} className='fa fa-user fa-fw fa-lg'></i><a href={e.owner.html_url} style={{textDecoration:'none'}}>{e.owner.login}</a></li>
                             <li><i style={{color:'rgb(255, 215, 0)'}} className='fa fa-star fa-fw fa-lg'></i>{e.watchers} stars</li>
                             <li><i style={{color:'rgb(129, 195, 245)'}} className='fa fa-link fa-fw fa-lg'></i>{e.forks_count} forks</li>
                             <li><i style={{color:'rgb(241, 138, 147)'}} className='fa fa-exclamation-triangle fa-fw fa-lg'></i>{e.open_issues} Open issues</li>
@@ -97,19 +85,12 @@
                         { name: 'Python', to: 'https://api.github.com/search/repositories?q=stars:%3E1+language:python&sort=stars&order=desc&type=Repositories' }
                     ],
                     nowList: [],
-                    // isButtom : false,
-                    // pageNo: 1,
                     isLoad: false,
-
-
                 }
                 this.tabsToggle = this.tabsToggle.bind(this);
             }
-            // componentWillUnmount() {
-                
-            // }
             tabsToggle = async(index) => {
-                this.setState({ currentIndex: index,isLoad:true})
+                this.setState({ currentIndex: index,isLoad:true,nowList:[]})
                 const currentUrl = this.state.linkdata[index].to
                 await axios.get(currentUrl)
                 .then ((res)=>{
@@ -123,9 +104,6 @@
                     this.setState({isLoad:false})
                 })
             }
-            // componentWillUnmount(){
-		    //     window.removeEventListener('scroll', this.bindHandleScroll);
-		    // }
             async componentDidMount() {
                 this.setState({isLoad:true})
                 await axios.get('https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories')
@@ -139,41 +117,9 @@
                     console.log(err)
                     this.setState({isLoad:false})
                 });
-                // 工程化后用组件
+                // 用插件
                 // window.addEventListener('scroll',this.bindHandleScroll) 
             }
-            // bindHandleScroll=()=>{
-            //     let scrollTop = 0, clientHeight = 0, scrollHeight = 0;
-            //     scrollTop = document.documentElement.scrollTop;
-            //     clientHeight = document.documentElement.clientHeight;
-            //     scrollHeight = document.documentElement.scrollHeight;
-            //     let heightDiff = scrollHeight-(scrollTop + clientHeight);   
-            //     console.log("scTop",scrollTop)
-            //     this.setState({
-            //         isButtom:heightDiff===0?true:false
-            //     })
-            //     if(this.state.isButtom) {
-            //         this.load(this.state.pageNo)
-            //     }
-            //     // console.log(this.state.isButtom)
-                
-            // }
-            // load = async(pageNo) => {
-            //     this.setState({isLoad:true});
-            //     this.cancelRequest;
-            //     await axios.get(`${this.state.linkdata[this.state.currentIndex].to}?page=${pageNo}`)
-            //     .then((res)=>{
-            //         this.setState({
-            //             nowList: [...this.state.nowList,...res.data.items],
-            //             // pageNo: this.state.pageNo+1,
-            //             isLoad:false,
-            //         })
-            //     })
-            //     .catch((err)=>{
-            //         console.log(err)
-            //         this.setState({isLoad:false})
-            //     })
-            // }
             
             render () {
                 return <div>
