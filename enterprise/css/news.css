@@ -11,8 +11,6 @@ body,html {
     width: 1200px;
     height: 70px;
     margin: 0 auto;
-    box-sizing: border-box;
-    padding: 0 100px;
     display: flex;
     justify-content: space-between;
 }

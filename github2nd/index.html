@@ -38,7 +38,7 @@
                 const list = this.props.linkdata.map((e,key)=>
                     <li key={key} onClick={() => { this.props.getToggle(key)}} style={{borderRadius:'15px',margin:'0 15px',backgroundColor: this.props.currentIndex === key ? "pink" : "white"}}  ><a href="#" style={{textDecoration:'none',color: '#000'}}>{e.name}</a></li>
                 )
-                return <ul style={{listStyle:'none',fontSize:'30px',display:'flex', justifyContent: "center",marginTop:'30px'}} >{list}</ul>
+                return (<ul style={{listStyle:'none',fontSize:'30px',display:'flex', justifyContent: "center",marginTop:'30px'}} >{list}</ul>)
             }
         }
         class Content extends React.Component {
@@ -54,21 +54,23 @@
                             <p style={{marginTop:'20px'}}><a href={e.html_url} style={{fontWeight:'bold',textDecoration:'none'}} >{e.name}/{e.owner.login}</a></p>
                         </div>
                         <ul style={{listStyle:'none',marginTop:'30px'}}>
-                            <li><i style={{color:'rgb(255, 191, 116)'}} className='fa fa-user fa-fw fa-lg'></i><a href={e.owner.html_url} style={{textDecoration:'none'}}>{e.owner.login}</a></li>
-                            <li><i style={{color:'rgb(255, 215, 0)'}} className='fa fa-star fa-fw fa-lg'></i>{e.watchers} stars</li>
-                            <li><i style={{color:'rgb(129, 195, 245)'}} className='fa fa-link fa-fw fa-lg'></i>{e.forks_count} forks</li>
-                            <li><i style={{color:'rgb(241, 138, 147)'}} className='fa fa-exclamation-triangle fa-fw fa-lg'></i>{e.open_issues} Open issues</li>
+                            <li key={key}>
+                                <p><i style={{color:'rgb(255, 191, 116)'}} className='fa fa-user fa-fw fa-lg'></i><a href={e.owner.html_url} style={{textDecoration:'none'}}>{e.owner.login}</a></p>    
+                                <p><i style={{color:'rgb(255, 215, 0)'}} className='fa fa-star fa-fw fa-lg'></i>{e.watchers} stars</p>    
+                                <p><i style={{color:'rgb(129, 195, 245)'}} className='fa fa-link fa-fw fa-lg'></i>{e.forks_count} forks</p>    
+                                <p><i style={{color:'rgb(241, 138, 147)'}} className='fa fa-exclamation-triangle fa-fw fa-lg'></i>{e.open_issues} Open issues</p>    
+                            </li>
                         </ul>
                     </div> 
                 )
-                return <div >{this.props.isLoad?<p style={{textAlign:'center'}}><i className="fa fa-refresh fa-spin fa-3x fa-fw"></i></p>:''}
+                return (<div >{this.props.isLoad?<p style={{textAlign:'center'}}><i className="fa fa-refresh fa-spin fa-3x fa-fw"></i></p>:''}
                     <div style={{display:'flex',justifyContent:'space-around',flexFlow: "row wrap",marginTop:'30px'}}>{list}</div>
-                </div>
+                </div>)
             }
         }
         class Footer extends React.Component {
             render () {
-                return <div style={{textAlign:'center',backgroundColor:'#ccc'}}>{this.props.children}</div>
+                return (<div style={{textAlign:'center',backgroundColor:'#ccc'}}>{this.props.children}</div>)
             }
         }
         class APP extends React.Component { 
@@ -122,11 +124,11 @@
             }
             
             render () {
-                return <div>
+                return (<div>
                 <Header linkdata={this.state.linkdata} getToggle={this.tabsToggle}  currentIndex={this.state.currentIndex} />
                 <Content currentList={this.state.nowList} isLoad={this.state.isLoad}/>  
                 <Footer><span>版权所有 &copy; xxn</span></Footer>
-                </div>
+                </div>)
             }
         }
         ReactDOM.render (
