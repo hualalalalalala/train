@@ -66,7 +66,7 @@ class Popular extends React.Component {
           pageNum: 1,
         });
         const lang = window.location.hash.split('=')[1];
-        console.log('设置的时候', window.location.hash.split('=')[1]);
+        // console.log('设置的时候', window.location.hash.split('=')[1]);
         let nowUrl = 'https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories';
         if (lang === 'All' || lang === undefined) {
           nowUrl = 'https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&order=desc&type=Repositories';

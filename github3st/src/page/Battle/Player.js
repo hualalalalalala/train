@@ -11,38 +11,56 @@ class Player extends React.Component {
             player1: '',
             player2: '',
             disabled:true,
-            disabled2:true
+            disabled2:true,
+            inputValue:'',
+            inputValue2:''
         };
     }
 
   handleChange = (e) => {
     this.setState({
-      disabled: e.target.value.length > 0 ? '' : 'true'
+      disabled: !(e.target.value.length > 0)
     })
   }
 
   handleChange2 = (e) => {
     this.setState({
-      disabled2: e.target.value.length > 0 ? '' : 'true'
+      disabled2: !(e.target.value.length > 0)
     })
   }
 
   playerBlur1 = (e) => {
-    console.log("触发")
+    // console.log("触发")
     this.setState({
-      player1: e.target.value,
+      inputValue: e.target.value,
     })
   }
 
   playerBlur2 = (e) => {
-    console.log("触发")
+    // console.log("触发")
     this.setState({
-      player2: e.target.value,
+      inputValue2: e.target.value,
+    })
+  }
+
+  onClick = () => {
+    console.log("点击")
+    const {inputValue} = this.state
+    this.setState({
+      player1: inputValue
+    })
+  }
+
+  onClick2 = () => {
+    console.log("点击2")
+    const {inputValue2} = this.state
+    this.setState({
+      player2: inputValue2
     })
   }
 
   onKeyDown = (e) => {
-    console.log("键盘",e.nativeEvent)
+    // console.log("键盘",e.nativeEvent)
     if (e.nativeEvent.code==='Enter'){
       this.setState({
         player1: e.target.value,
@@ -65,7 +83,9 @@ class Player extends React.Component {
 
   cancel = (player) => {
     this.setState({
-      [player]:''
+      [player]:'',
+      disabled:true,
+      disabled2:true
     })
   }
 
@@ -94,7 +114,7 @@ class Player extends React.Component {
                   ) : (
                     <div className={style.emptyBox}>
                       <input id="user" type="text" placeholder="github user" className={style.emptyIn} onChange={this.handleChange} onBlur={this.playerBlur1} onKeyDown={this.onKeyDown} />
-                      <button disabled={disabled} type="button" className={disabled==='true'?style.submitBtn:style.dis} onClick={()=>this.playerBlur1}>submit</button>
+                      <button disabled={disabled} type="button" className={disabled===true?style.submitBtn:style.dis} onClick={this.onClick}>submit</button>
                     </div>
                     )}
                 </div>
@@ -115,7 +135,7 @@ class Player extends React.Component {
                   ):(
                     <div className={style.emptyBox}>
                       <input type="text" placeholder="github user" className={style.emptyIn} onChange={this.handleChange2} onBlur={this.playerBlur2} onKeyDown={this.onKeyDown2} />
-                      <button type="button" disabled={disabled2} className={disabled2==='true'?style.submitBtn:style.dis} onClick={()=>this.playerBlur1}>submit</button>
+                      <button type="button" disabled={disabled2} className={disabled2===true?style.submitBtn:style.dis} onClick={this.onClick2}>submit</button>
                     </div>
                   )}
                 </div>

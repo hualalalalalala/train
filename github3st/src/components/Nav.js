@@ -12,10 +12,10 @@ export default class Nav extends React.Component {
       <div>
         <ul style={{ display: 'flex', justifyContent: 'left', listStyle: 'none' ,marginTop:'30px'}}>
           <li key="popular" style={{ margin: '0 10px' }}>
-            <NavLink exact activeStyle={{ color: '#1890ff' }} to="/popular">popular</NavLink>
+            <NavLink exact activeStyle={{color:'red'}} to="/popular">popular</NavLink>
           </li>
           <li key="battle">
-            <NavLink exact to="/battle">battle</NavLink>
+            <NavLink exact activeStyle={{color:'red'}} to="/battle">battle</NavLink>
           </li>
         </ul>
       </div>
