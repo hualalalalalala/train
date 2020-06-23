@@ -4,108 +4,62 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <title>关于我们</title>
-  <link rel="stylesheet" type="text/css" href="css/about.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="./font/iconfont.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="./js/jquery.min.js"></script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=Ed0PM4PZHFxM2c9WMZbMFACXpOy0YViH&s=1"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/about.css">
+
+
+
 </head>
 <body>
 <!--头部-->
-<div class="header" id="top">
-  <div class="headerIn">
-    <!--class="iconfont icon-food"-->
-    <h1 class="left"><a href="index.html" ></a></h1>
-    <div class="right">
-      <ul class="menu clearfix">
-        <li><a href="index.html">首页</a></li>
-        <li><a href="news.html">美食学堂</a></li>
-        <li><a href="about.html">关于我们</a></li>
-      </ul>
-      <!--<img src="./images/more-o.png" alt="" class="more">-->
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">我还没有logo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-</div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">首页</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">美食学堂</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="about.html">关于我们</a>
+        </li>
+    </ul>
+  </div>
+</nav>
 <!--内容-->
-<div class="content">
-  <div class="contentIn">
-    <!--内容 地图-->
-    <div class="content-left">
-      <form name="locateForm" class="sel">
-        <span>选择省份：</span>
-        <select name="pick" onchange="reveal()">
-          <option value="0"> 福州总部 </option>
-          <option value="1"> 厦门分部 </option>
-        </select>
-        <span>具体地址：</span>
-        <input name="field" type="text" id="suggestId"  value="福建省福州市福州地区大学新区学园路2号" style="overflow:auto" disabled>
-      </form>
-      <div id="locateMap" class="map"></div>
-    </div>
-    <!--内容 介绍-->
-    <div class="content-right">
-      <h2 class="myName">
-        yummy餐饮服务有限公司
-      </h2>
-      <div class="introduce">
-        yummy餐饮服务有限公司成立于1998年，来自福建的大型餐饮连锁企业。旗下拥有“名菇”火锅、“芋儿香” 麻辣厨房、“芋儿香”美食广场、“兴业美食总汇”等餐饮品牌
-        及项目。公司经过近二十年的发展，已拥有了多家直营连锁店, 并拥有高级技师等专业人才组成的管理团队。拥有由国际烹饪艺术大师、中国烹饪大师、中
-        国餐饮文化大师、国家级烹饪专家评委，以及高级技师等专业人才组成的管理团队，员工1068人，总营业面积近4万平方米，并在福建自有100亩物流生产基地。
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      <h3 class="h3 text-center">餐饮服务有限公司</h3>
+      <div class="lead text-left">
+        <p class="mb-0 info lead">餐饮服务有限公司成立于1998年，来自福建的大型餐饮连锁企业。拥有<span id="fuzhou"><a href="#">福州总店</a></span>，<span id="xiamen"><a href="#">厦门分店</a></span>，旗下拥有“名菇”火锅、“芋儿香” 麻辣厨房、“芋儿香”美食广场、“兴业美食总汇”等餐饮品牌
+          及项目。公司经过近二十年的发展，已拥有了多家直营连锁店, 并拥有高级技师等专业人才组成的管理团队。拥有由国际烹饪艺术大师、中国烹饪大师、中
+          国餐饮文化大师、国家级烹饪专家评委，以及高级技师等专业人才组成的管理团队，员工1068人，总营业面积近4万平方米，并在福建自有100亩物流生产基地。</p>
       </div>
-      <ul class="conn">
-        <li class="iconfont icon-weizhi">&nbsp;&nbsp;福建省福州市福州地区大学新区学园路2号(总部)</li>
-        <li class="iconfont icon-weibiaoti-">&nbsp;&nbsp;800-820-8820</li>
-        <li class="iconfont icon-youxiang">&nbsp;&nbsp;hahaha@yummy.com</li>
-      </ul>
+
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+      <div id="locateMap"></div>
     </div>
   </div>
-
 </div>
+
 
 <!--底部-->
-<div class="footer">
-  <div class="footIn">
-    <div class="quick">
-      <h4>快速链接</h4>
-      <div class="line"></div>
-      <ul class="foot-link">
-        <li><a href="#">网站首页</a></li>
-        <li><a href="#">网站首页</a></li>
-        <li><a href="#">网站首页</a></li>
-        <!--<br>-->
-        <li><a href="#">网站首页</a></li>
-        <li><a href="#">网站首页</a></li>
-        <li><a href="#">网站首页</a></li>
-      </ul>
-    </div>
-    <div class="connect">
-      <h4>联系我们</h4>
-      <div class="line"></div>
-      <ul class="foot-conn">
-        <li class="iconfont icon-weizhi">&nbsp;福州市福州地区大学新区学园路2号</li>
-        <li class="iconfont icon-youxiang">&nbsp;hahah@yummy.com</li>
-        <li class="iconfont icon-weibiaoti-">&nbsp;800-820-8820</li>
-      </ul>
-    </div>
-    <div class="subscribe">
-      <h4>关注我们</h4>
-      <div class="line"></div>
-      <ul class="foot-subscript">
-        <li><a href="#"></a></li>
-        <li><a href="#" id="wx"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-      </ul><br><br>
-      <img src="./images/qrscan.png" alt="" class="scan" id="scanImg">
-    </div>
-  </div>
-</div>
-</body>
-</html>
+
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=Ed0PM4PZHFxM2c9WMZbMFACXpOy0YViH&s=1"></script>
 <script type="text/javascript">
 	// 百度地图API功能
     var map = new BMap.Map("locateMap");
@@ -114,24 +68,24 @@
     var local = new BMap.LocalSearch(map, {
         renderOptions:{map: map}
     });
-    var msearch = document.getElementById("suggestId").value;
-    local.search(msearch);  //百度地图关键字检索 默认加载一次
     var company = new Array();
     company[0] = "福建省福州市福州地区大学新区学园路2号";			//这里写入每个选项对应的说明文字
     company[1] = "福建省厦门市思明区思明南路422号";
-
-    function reveal() {
-        var index = document.locateForm.pick.selectedIndex;//取得当前下拉菜单选定项目的序号
-        helpmsg = company[index];//根据序号取得当前选项的说明
-        document.locateForm.field.value = helpmsg//将说明写进文框
-        var msearch = document.getElementById("suggestId").value;
-        local.search(msearch);  //百度地图关键字检索 触发加载
-    }
+    // var msearch = document.getElementById("suggestId").value;
+    local.search(company[0]);  //百度地图关键字检索 默认加载一次
+    $('#fuzhou').click (function() {
+      local.search(company[0]);
+      document.locateForm.field.value = company[0]
+    })
+    $('#xiamen').click(function() {
+      local.search(company[1]);
+      document.locateForm.field.value = company[1]
+    })
     $('#wx').hover(function () {
         $('#scanImg').show()
     },function () {
         $('#scanImg').hide()
 })
-
-
 </script>
+</body>
+</html>

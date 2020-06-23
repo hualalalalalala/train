@@ -4,41 +4,86 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="font/iconfont.css">
-    <link rel="stylesheet" href="css/layui.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/news.css">
     <title>企业站</title>
-    <script src="./js/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="./js/bootstrap.min.js"></script>
-    <!--<script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>-->
-    <script src="js/axios.min.js"></script>
-    <script src="js/layui.js"></script>
-
-
-
 </head>
 <body>
 <body>
 <!--头部-->
-<div class="header" id="top">
-    <div class="headerIn">
-        <!--class="iconfont icon-food"-->
-        <h1 class="left"><a href="index.html" ></a></h1>
-        <div class="right">
-            <ul class="menu clearfix">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="news.html">美食学堂</a></li>
-                <li><a href="about.html">关于我们</a></li>
-            </ul>
-            <!--<img src="./images/more-o.png" alt="" class="more">-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">我还没有logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">首页</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">美食学堂</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">关于我们</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+<!--新闻列表-->
+<h2 class="h2 text-center">美食学堂</h2>
+<div class="container">
+    <div class="row">
+        <div class="card col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+            </div>
+        </div>
+        <div class="card col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+            </div>
+        </div>
+        <div class="card col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+            </div>
+        </div>
+        <div class="card col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+            </div>
+        </div>
+        <div class="card col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+            </div>
+        </div>
+        <div class="card col-6 col-sm-6 col-md-4 col-lg-4">
+            <img src="" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+            </div>
         </div>
     </div>
-
+    <div class="row">
+        
+    </div>
 </div>
-<!--新闻列表-->
-<div class="news">
+<!-- <div class="news">
     <div class="newsIn">
         <div class="lesson">美食学堂</div>
         <div class="box-line"></div>
@@ -74,7 +119,7 @@
                 </div>
             </a>
         </div>
-           
+            -->
         
         <div class="page">
             <nav aria-label="Page navigation">
@@ -97,8 +142,17 @@
         </div>
     </div>
 </div>
+<!-- 分页 -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center" id="pn">
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+  </nav>
+
 <!--底部-->
-<div class="footer">
+<!-- <div class="footer">
     <div class="footIn">
         <div class="quick">
             <h4>快速链接</h4>
@@ -107,7 +161,7 @@
                 <li><a href="#">网站首页</a></li>
                 <li><a href="#">网站首页</a></li>
                 <li><a href="#">网站首页</a></li>
-                <!--<br>-->
+      
                 <li><a href="#">网站首页</a></li>
                 <li><a href="#">网站首页</a></li>
                 <li><a href="#">网站首页</a></li>
@@ -134,15 +188,17 @@
             <img src="./images/qrscan.png" alt="" class="scan" id="scanImg">
         </div>
     </div>
-</div>
+</div> -->
 
 <!--返回顶部-->
 <div class="back-to" id="toolBackTop">
     <a title="返回顶部"  href="#top" class="back-top"></a>
 </div>
 
-</body>
-<script src="js/layui.js"></script>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="js/axios.min.js"></script>
 <script>
 
     $(function () {
@@ -172,45 +228,27 @@
                 bt.hide();
             }
         });
-
+        
+        var cpage = 1;
         function pageGet(page) {
             axios.get('https://mock-api.com/Gzq27OgW.mock/list?page='+page)
                 .then(function (res) {
                     var now = res.data;
-                    // context.dispatch('loading', false, {root: true});
                     $.each(now, function (index, ele) {
-                        $('.newsBox').eq(index).find('img').prop('src', ele.img)
-                        $('.newsBox').eq(index).find('.title').html(ele.title)
-                        $('.newsBox').eq(index).prop('href', `news-detail.html?id=${ele.id}`) ;
-
+                        $('.card').eq(index).find('img').prop('src', ele.img)
+                        $('.card-title').eq(index).html(ele.title)
+                        $('.card-body').eq(index).find('a').prop('href', `news-detail.html?id=${ele.id}`) ;
                     })
-                    // for(var index in a){
-                    //     // console.log($('.newsBox').eq(index));
-                    //     // console.log(a[index].id)
-                    //     // var target = `news-detail.html?id=${parseInt(a[index].id)}`;
-                    //     // console.log(target);
-                    //     $('.newsBox').eq(index).find('img').prop('src', a[index].img)
-                    //     $('.newsBox').eq(index).find('.title').html(a[index].title)
-                    //     $('.newsBox').eq(index).click(function () {
-                    //         window.location.href = `news-detail.html?id=${index}`
-                    //     })
-                    //     // var boxhtml =`<div class="col-md-4 cBox">
-                    //     //                 <div class="newsBox">
-                    //     //                     <img src="${a[index].img}" alt="">
-                    //     //                     <div class="title"><a href="news-detail.html?id=${a[index].id}">${a[index].title}</a></div>
-                    //     //                 </div>
-                    //     //             </div>`;
-                    //     // $('#boxIn').append(boxhtml);
-                    // }
                 }).catch(function (res) {
                 console.log('error', res);
             })
         }
         $('#pn li a').click(function () {
-            $('#boxIn').html('');
-            pageGet(parseInt($(this).text()));
-
-
+            // $('.row').html('');
+            var nowpage = parseInt($(this).text())
+            $(this).parent().addClass('active').siblings().removeClass('active')
+            console.log('页码',nowpage)
+            pageGet(nowpage);
         });
         pageGet(1);
     })

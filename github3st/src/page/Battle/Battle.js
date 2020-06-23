@@ -4,7 +4,7 @@ import style from "@/page/Battle/battle.less"
 
 export default class Battle extends React.Component {
   render() {
-    const { startBattle,getPlayerFromUrl } = this.props;
+    const { startBattle } = this.props;
     return (
       <div className={style.battle}>
         <div className={style.instrutions}>
@@ -24,7 +24,7 @@ export default class Battle extends React.Component {
             </li>
           </ul>
         </div>
-        <Player startBattle={startBattle} getPlayerFromUrl={getPlayerFromUrl} />
+        <Player startBattle={startBattle} />
       </div>
     );
   }
