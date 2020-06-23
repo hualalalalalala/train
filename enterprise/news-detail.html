@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="font/iconfont.css">
-    <link rel="stylesheet" href="css/news-detail.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/news-detail.css">
     <title>企业站</title>
     <script src="./js/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <script src="./js/bootstrap.min.js"></script>
     <script src="js/axios.min.js"></script>
 
@@ -18,33 +19,40 @@
 <body>
 <body>
 <!--头部-->
-<div class="header" id="top">
-    <div class="headerIn">
-        <!--class="iconfont icon-food"-->
-        <h1 class="left"><a href="index.html" ></a></h1>
-        <div class="right">
-            <ul class="menu clearfix">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="news.html">美食学堂</a></li>
-                <li><a href="about.html">关于我们</a></li>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">我还没有logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">首页</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html">美食学堂</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">关于我们</a>
+          </li>
+      </ul>
     </div>
-
-</div>
+  </nav>
 
 <!--食物详情介绍-->
-<div class="des">
-    <div class="des-in">
-        <div class="des-box">
-            <h2></h2>
-            <div class="des-date"></div>
-            <div class="box-line"></div>
-            <img src="" alt="" class="food-img">
+<div class="container">
+    <div class="row ">
+        <divc class="col text-center">
+            <h2 class="h2" id="title"></h2>
+            <div class="des-date" id="update"></div>
+            <div><img src="" alt="" id="foodimg"></div>
             <!--<div class="food-img"></div>-->
-            <p></p>
+            <p id="dest" class="lead text-left "></p>
         </div>
-        <ul class="qlink">
+    </div>
+    <div class="row">
+        <ul class="col qlink">
             <li>上一篇：<a href="" id="pre"></a></li>
             <li>下一篇：<a href="" id="next"></a></li>
         </ul>
@@ -52,44 +60,6 @@
 </div>
 
 
-<!--底部-->
-<div class="footer">
-    <div class="footIn">
-        <div class="quick">
-            <h4>快速链接</h4>
-            <div class="line"></div>
-            <ul class="foot-link">
-                <li><a href="#">网站首页</a></li>
-                <li><a href="#">网站首页</a></li>
-                <li><a href="#">网站首页</a></li>
-                <!--<br>-->
-                <li><a href="#">网站首页</a></li>
-                <li><a href="#">网站首页</a></li>
-                <li><a href="#">网站首页</a></li>
-            </ul>
-        </div>
-        <div class="connect">
-            <h4>联系我们</h4>
-            <div class="line"></div>
-            <ul class="foot-conn">
-                <li class="iconfont icon-weizhi">&nbsp;福州市福州地区大学新区学园路2号</li>
-                <li class="iconfont icon-youxiang">&nbsp;hahah@yummy.com</li>
-                <li class="iconfont icon-weibiaoti-">&nbsp;800-820-8820</li>
-            </ul>
-        </div>
-        <div class="subscribe">
-            <h4>关注我们</h4>
-            <div class="line"></div>
-            <ul class="foot-subscript">
-                <li><a href="#"></a></li>
-                <li><a href="#" id="wx"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul><br><br>
-            <img src="./images/qrscan.png" alt="" class="scan" id="scanImg">
-        </div>
-    </div>
-</div>
 <!--返回顶部-->
 <div class="back-to" id="toolBackTop">
     <a title="返回顶部"  href="#top" class="back-top"></a>
@@ -144,10 +114,10 @@
                 console.log(res.data)
                 var a=res.data[id];
                 // console.log(res.data.length-1)
-                $('.des-box h2').html(a.title);
-                $('.des-box .des-date').html("发布时间："+a.date);
-                $('.food-img').prop('src', a.img);
-                $('.des-box p').html(a.description);
+                $('#title').html(a.title);
+                $('#update').html("发布时间："+a.date);
+                $('#foodimg').prop('src', a.img);
+                $('#dest').html(a.description);
                 if(id==0){
                     $('#pre').html("无");
                     $('#pre').attr('disabled',true).css("pointer-events","none");  ;

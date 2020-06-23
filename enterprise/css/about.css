@@ -9,9 +9,15 @@ a {
 	font-size: 18px;
 	text-indent: 2em;
 }
+.text-center {
+	text-align: center;
+}
 /*地图*/
 #locateMap {
 	height: 300px;
 }
 
 /*底部*/
+.bg {
+	background-color:#e3f2fd
+}
