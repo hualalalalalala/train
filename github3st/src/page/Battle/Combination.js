@@ -13,15 +13,23 @@ class Combination extends React.Component {
 
     componentDidMount = () => {
         if(window.location.hash!=='#/battle'){
+            console.log('刷新啊啊啊啊啊')
             console.log('href',window.location.href.split('?')[1].split('&'))
             const play1 = window.location.href.split('?')[1].split('&')[0].split('=')[1]
             const play2 = window.location.href.split('?')[1].split('&')[1].split('=')[1]
+            console.log(play1,play2)
             window.addEventListener('load',()=>{
                 this.setState({
                     player1:play1,
                     player2:play2
                 })
             })
+            // window.addEventListener('hashchange', () => {
+            //     this.setState({
+            //         player1:play1,
+            //         player2:play2
+            //     })
+            // });
         }
 
     }
