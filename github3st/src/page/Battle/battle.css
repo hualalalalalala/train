@@ -1,0 +1,138 @@
+.battle .instrutions {
+  text-align: center;
+}
+.battle .instrutions h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.battle ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.battle ul li {
+  margin: 0 40px;
+}
+.battle ul li h3 {
+  font-size: 25px;
+}
+.battle ul li div {
+  width: 200px;
+  height: 200px;
+  background-color: #d6d6d6;
+  font-size: 150px;
+  border-radius: 15%;
+}
+.battle ul li div .icons {
+  text-align: center;
+  margin-top: 24px;
+}
+h2 {
+  margin-top: 40px;
+}
+.playerBox {
+  display: flex;
+  justify-content: center;
+  height: 90px;
+}
+.playerBox .play {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 20px 10px;
+}
+.playerBox .play .selected {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  border-radius: 20px;
+  height: 40px;
+  background-color: #dfdfdf;
+}
+.playerBox .play .selected .info {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+}
+.playerBox .play .selected .info .playerimg {
+  border-radius: 16px;
+  width: 64px;
+  height: 64px;
+  margin: 0 8px;
+}
+.playerBox .play .emptyBox {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+.playerBox .play .emptyBox .emptyIn {
+  height: 40px;
+  flex: 2;
+  font-size: 16px;
+}
+.playerBox .play .emptyBox .submitBtn {
+  flex: 1;
+  font-size: 16px;
+  margin-left: 16px;
+  padding: 10px;
+  border-radius: 3px;
+}
+.start_battle {
+  text-align: center;
+  margin-top: 50px;
+}
+.start_battle button {
+  padding: 10px 20px;
+  border: none;
+  font-size: 20px;
+  line-height: 30px;
+  border-radius: 10px;
+}
+.start_battle button:hover {
+  cursor: pointer;
+  color: blue;
+}
+.result {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.result .card {
+  width: 400px;
+  margin: 30px 10px;
+  background-color: #dddddd;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.result .card .proname {
+  margin-bottom: 15px;
+  text-align: center;
+}
+.result .card .text-center {
+  text-align: center;
+}
+.result .card .tal {
+  margin: 10px 0;
+  text-align: left;
+}
+.result .card img {
+  margin: 0 20%;
+  width: 200px;
+  height: 200px;
+}
+.resetBtn {
+  text-align: center;
+}
+.resetBtn button {
+  font-size: 16px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.resetBtn button:hover {
+  color: blue;
+}
