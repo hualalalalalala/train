@@ -21,9 +21,20 @@
     *zoom:1;
 }
 a {
-    text-decoration: none;
-    color: white;
+    text-decoration: none !important;
+    color: #ccc !important;
 }
 ul {
     list-style: none;
+}
+.row.gutter {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row.gutter > [class*='col-'] {
+    padding-right: 5px;
+    padding-left: 5px;
+  } 
+  .foot {
+    background-color: #f8f9fa;
 }

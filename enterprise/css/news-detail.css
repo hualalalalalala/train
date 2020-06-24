@@ -8,6 +8,8 @@ a:active {
 }
 #dest {
     text-indent: 2em;
+    margin: 10px 0 50px 0;
+    /* height: 400px; */
 }
 /*返回顶部小标*/
 .back-to {
