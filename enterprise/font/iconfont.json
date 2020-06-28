@@ -6,53 +6,11 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "1148896",
-      "name": "邮箱",
-      "font_class": "youxiang",
-      "unicode": "e687",
-      "unicode_decimal": 59015
-    },
-    {
-      "icon_id": "1403429",
-      "name": "vivo",
-      "font_class": "vivo",
-      "unicode": "e82e",
-      "unicode_decimal": 59438
-    },
-    {
-      "icon_id": "2680321",
-      "name": "位置",
-      "font_class": "weizhi",
-      "unicode": "e6f8",
-      "unicode_decimal": 59128
-    },
-    {
-      "icon_id": "3764006",
-      "name": "电话",
-      "font_class": "weibiaoti-",
-      "unicode": "e60d",
-      "unicode_decimal": 58893
-    },
-    {
-      "icon_id": "6977952",
-      "name": "返回顶部",
-      "font_class": "fanhuidingbu",
-      "unicode": "e620",
-      "unicode_decimal": 58912
-    },
-    {
-      "icon_id": "9080740",
+      "icon_id": "431767",
       "name": "food",
       "font_class": "food",
-      "unicode": "e662",
-      "unicode_decimal": 58978
-    },
-    {
-      "icon_id": "14421735",
-      "name": "放大镜",
-      "font_class": "fangdajing_huaban1",
-      "unicode": "e682",
-      "unicode_decimal": 59010
+      "unicode": "e6fe",
+      "unicode_decimal": 59134
     }
   ]
 }
