@@ -26,7 +26,7 @@ class Result extends React.Component {
       })
     })
     .catch((err)=>{
-      console.log('这里的错误',err)
+          console.log('这里的错误',err)
     });
     await axios.get(`https://api.github.com/users/${player2}`)
     .then((res)=>{
@@ -35,7 +35,7 @@ class Result extends React.Component {
       })
     })
     .catch((err)=>{
-      console.log('这里的错误',err)
+          console.log('这里的错误',err)
     });
   }
 

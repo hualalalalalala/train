@@ -102,7 +102,7 @@ class Player extends React.Component {
                   {player1 ? (
                     <div className={style.selected}>
                       <div className={style.info}>
-                        <div className={style.imgbox}><img src={`https://github.com/${player2}.png?size=200`} alt='' className={style.playerimg} /></div>
+                        <div className={style.imgbox}><img src={`https://github.com/${player1}.png?size=200`} alt='' className={style.playerimg} /></div>
                         <span>{player1}</span>
                       </div>
                       <div>
