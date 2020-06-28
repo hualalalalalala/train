@@ -1,15 +1,15 @@
-import React , { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
-import { HashRouter as Router, Route, Switch} from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
-import 'normalize.css/normalize.css';
+import "normalize.css/normalize.css";
 import Popular from "./page/Popular";
 import Nav from "./components/Nav";
 import "font-awesome/css/font-awesome.min.css";
-import '@/styles/index.less'
+import "@/styles/index.less";
 // import Combination from "./page/Battle/Combination";
 
-const Combination = lazy(() => import('../src/page/Battle/Combination'));
+const Combination = lazy(() => import("../src/page/Battle/Combination"));
 class App extends React.Component {
   render() {
     return (
@@ -30,7 +30,4 @@ class App extends React.Component {
   }
 }
 export default hot(App);
-ReactDOM.render(
-  <App >,
-  document.getElementById('app'),
-);
+ReactDOM.render(<App />, document.getElementById("app"));
