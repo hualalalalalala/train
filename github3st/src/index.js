@@ -31,6 +31,6 @@ class App extends React.Component {
 }
 export default hot(App);
 ReactDOM.render(
-  <App />,
+  <App >,
   document.getElementById('app'),
 );
