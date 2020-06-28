@@ -14,6 +14,8 @@ class Popular extends React.Component {
       pageNum: 1,
       loading: false,
       hasMore: true,
+      tip: "loading",
+      errtip: false,
     };
   }
 
@@ -31,7 +33,12 @@ class Popular extends React.Component {
 
   search = async () => {
     console.log("滚动触发了");
-    this.setState({ loading: true });
+    this.setState({
+      loading: true,
+      tip: "请稍等",
+      hasMore: true,
+      errtip: false,
+    });
     const { nowApi, pageNum, nowList } = this.state;
     await axios({
       method: "get",
@@ -45,27 +52,46 @@ class Popular extends React.Component {
           nowList: [...nowList, ...res.data.items].slice(0, pageNum * 10),
           pageNum: pageNum + 1,
           loading: false,
+          tip: "请稍等",
+          errtip: false,
         });
       })
       .catch((err) => {
         console.log(err);
-        this.setState({ loading: false });
+        this.setState({
+          loading: false,
+          tip: "请求超时",
+          hasMore: false,
+          errtip: true,
+        });
       });
   };
 
   getData = async (nowUrl) => {
-    this.setState({ loading: true });
+    this.setState({
+      loading: true,
+      tip: "请稍等",
+      hasMore: true,
+      errtip: false,
+    });
     await axios
       .get(nowUrl)
       .then((res) => {
         this.setState({
           loading: false,
+          tip: "请稍等",
+          errtip: false,
           nowList: res.data.items.slice(0, 10),
         });
       })
       .catch((err) => {
         console.log(err);
-        this.setState({ loading: false });
+        this.setState({
+          loading: false,
+          tip: "请求超时",
+          hasMore: false,
+          errtip: true,
+        });
       });
   };
 
@@ -74,6 +100,9 @@ class Popular extends React.Component {
       nowList: [],
       pageNum: 1,
       loading: true,
+      tip: "请稍等",
+      hasMore: true,
+      errtip: false,
     });
     const lang = window.location.hash.split("=")[1];
     // console.log('设置的时候', window.location.hash.split('=')[1]);
@@ -89,12 +118,15 @@ class Popular extends React.Component {
     this.setState({
       nowApi: nowUrl,
       loading: true,
+      tip: "请稍等",
+      hasMore: true,
+      errtip: false,
     });
     return nowUrl;
   };
 
   render() {
-    const { loading, hasMore } = this.state;
+    const { loading, hasMore, tip, errtip } = this.state;
     console.log(loading);
     return (
       <div>
@@ -110,14 +142,15 @@ class Popular extends React.Component {
               display: "flex",
               justifyContent: "space-around",
               flexFlow: "row wrap",
-              marginTop: "30px",
+              marginTop: "10px",
             }}
           >
             {this.state.nowList.map((item, key) => (
               <Card item={item} index={key} key={key} />
             ))}
           </div>
-          {loading ? <h5 style={{ textAlign: "center" }}>Loading...</h5> : ""}
+          {loading ? <h5 style={{ textAlign: "center" }}>{tip}</h5> : ""}
+          {errtip ? <h5 style={{ textAlign: "center" }}>请求超时</h5> : ""}
         </InfiniteScroll>
         )
         <Footer>
