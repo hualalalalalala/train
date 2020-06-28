@@ -38,3 +38,7 @@ ul {
   .foot {
     background-color: #f8f9fa;
 }
+.active-title {
+    font-weight: bold;
+    background-color: seagreen;
+}

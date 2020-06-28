@@ -23,7 +23,7 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">首页</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active-title">
           <a class="nav-link" href="news.html">美食学堂</a>
         </li>
         <li class="nav-item">
@@ -39,7 +39,7 @@
     <div class="row mb-3 gutter">
         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+                <img data-src="" class="card-img-top img-fluid lazyload" data-sizes="auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <a href="#" class="btn btn-primary btn-sm">查看详情</a>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+              <img data-src="" class="card-img-top img-fluid lazyload" data-sizes="auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <a href="#" class="btn btn-primary btn-sm">查看详情</a>
@@ -57,7 +57,7 @@
         </div>
         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+              <img data-src="" class="card-img-top img-fluid lazyload" data-sizes="auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <a href="#" class="btn btn-primary btn-sm">查看详情</a>
@@ -66,7 +66,7 @@
         </div>
         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+              <img data-src="" class="card-img-top img-fluid lazyload" data-sizes="auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <a href="#" class="btn btn-primary btn-sm">查看详情</a>
@@ -75,7 +75,7 @@
         </div>
         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+              <img data-src="" class="card-img-top img-fluid lazyload" data-sizes="auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <a href="#" class="btn btn-primary btn-sm">查看详情</a>
@@ -84,7 +84,7 @@
         </div>
         <div class="col-6 col-sm-6 col-md-4 col-lg-4">
             <div class="card">
-                <img src="" class="card-img-top" alt="...">
+              <img data-src="" class="card-img-top img-fluid lazyload" data-sizes="auto" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Card title</h5>
                   <a href="#" class="btn btn-primary btn-sm">查看详情</a>
@@ -130,11 +130,10 @@
           <li><a href="">来往</a></li>
         </ul>
       </div>
-  
-  
+  <!-- <img src="./dist/images/news/cake1-180.png" alt=""> -->
       <div class="col-4 col-sm-2 col-md-2 col-lg-2 text-center">
         <h6>联系我们</h6>
-        <img src="./images/qrscan.png" alt="">
+        <img src="./dist/images/qrscan-original.png" alt="">
       </div>
     </div>
     <div class="row text-center">
@@ -154,6 +153,15 @@
 <script>
 
     $(function () {
+      function loadJS(u) {
+        var r = document.getElementsByTagName("script")[0],
+            s = document.createElement("script");
+        s.src = u;
+        r.parentNode.insertBefore(s, r);
+      }
+      if (!window.HTMLPictureElement) {
+        loadJS("js/ls.respimg.min.js");
+      }
         $('#wx').hover(function () {
             $('#scanImg').show()
         }, function () {
@@ -187,7 +195,12 @@
                 .then(function (res) {
                     var now = res.data;
                     $.each(now, function (index, ele) {
-                        $('.card').eq(index).find('img').prop('src', ele.img)
+                      //<img data-src="./dist/images/hotfood1-original.png" datasrcset="./dist/images/hotFood1-90.png 90w,./dist/images/hotfood1-180.png 180w,./dist/images/hotfood1-original.png," class="card-img-top img-fluid lazyload" alt="..." data-sizes="auto">
+                        $('.card').eq(index).find('img').attr({'data-src':`./dist/images/news/${ele.img}-original.png`,
+                      'datasrcset':`./dist/images/news/${ele.img}-90.png 90w,./dist/images/news/${ele.img}-180.png 180w,./dist/images/news/${ele.img}-360.png 360w,./dist/images/news/${ele.img}-original.png`,
+                    'alt':`./dist/images/news/${ele.img}-original`,
+                    'class':"card-img-top img-fluid lazyload" ,
+                    'data-sizes':"auto"})
                         $('.card-title').eq(index).html(ele.title)
                         $('.card-body').eq(index).find('a').prop('href', `news-detail.html?id=${ele.id}`) ;
                     })
@@ -205,5 +218,7 @@
         pageGet(1);
     })
 </script>
+<script src="https://afarkas.github.io/lazysizes/plugins/bgset/ls.bgset.min.js"></script>
+<script src="js/lazysizes.min.js" async></script>
 </body>
 </html>
