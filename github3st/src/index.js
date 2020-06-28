@@ -19,7 +19,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/" component={Popular} exact />
             <Route exact path="/popular" component={Popular} />
-            <Suspense fallback={<div style={{textAlign:"center"}}>Loading...</div>}>
+            <Suspense fallback={<div className="text-center">Loading...</div>}>
               <Route path="/battle" component={Combination} />
             </Suspense>
             {/* <Route exact path="/battle" component={Combination} /> */}
