@@ -12,6 +12,8 @@ class Popular extends React.Component {
       nowApi: "",
       nowList: [],
       pageNum: 1,
+      loading: false,
+      hasMore: true,
     };
   }
 
@@ -29,6 +31,7 @@ class Popular extends React.Component {
 
   search = async () => {
     console.log("滚动触发了");
+    this.setState({ loading: true });
     const { nowApi, pageNum, nowList } = this.state;
     await axios({
       method: "get",
@@ -41,25 +44,28 @@ class Popular extends React.Component {
         this.setState({
           nowList: [...nowList, ...res.data.items].slice(0, pageNum * 10),
           pageNum: pageNum + 1,
+          loading: false,
         });
       })
       .catch((err) => {
         console.log(err);
-        alert("请求超时");
+        this.setState({ loading: false });
       });
   };
 
   getData = async (nowUrl) => {
+    this.setState({ loading: true });
     await axios
       .get(nowUrl)
       .then((res) => {
         this.setState({
+          loading: false,
           nowList: res.data.items.slice(0, 10),
         });
       })
       .catch((err) => {
         console.log(err);
-        alert("请求超时");
+        this.setState({ loading: false });
       });
   };
 
@@ -67,6 +73,7 @@ class Popular extends React.Component {
     this.setState({
       nowList: [],
       pageNum: 1,
+      loading: true,
     });
     const lang = window.location.hash.split("=")[1];
     // console.log('设置的时候', window.location.hash.split('=')[1]);
@@ -81,24 +88,22 @@ class Popular extends React.Component {
     console.log(nowUrl);
     this.setState({
       nowApi: nowUrl,
+      loading: true,
     });
     return nowUrl;
   };
 
   render() {
+    const { loading, hasMore } = this.state;
+    console.log(loading);
     return (
       <div>
         <Header />(
         <InfiniteScroll
           pageStart={1}
           loadMore={this.search}
-          hasMore
+          hasMore={!loading && hasMore}
           useWindow
-          loader={
-            <div className="loader" style={{ textAlign: "center" }} key={0}>
-              Loading ...
-            </div>
-          }
         >
           <div
             style={{
@@ -112,6 +117,7 @@ class Popular extends React.Component {
               <Card item={item} index={key} key={key} />
             ))}
           </div>
+          {loading ? <h5 style={{ textAlign: "center" }}>Loading...</h5> : ""}
         </InfiniteScroll>
         )
         <Footer>
