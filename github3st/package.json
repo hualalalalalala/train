@@ -74,16 +74,16 @@
     "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,jsx,less}": [
       "prettier --write",
       "git add"
     ],
-    "**/*.{js,jsx}": "eslint --ext .js"
+    "src/**/*.{js,jsx}": "eslint --ext .js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
