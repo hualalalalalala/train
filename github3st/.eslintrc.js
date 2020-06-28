@@ -11,6 +11,8 @@ module.exports = {
     'react/prefer-stateless-function': 0,
     'react/no-array-index-key': 0,
     'no-console': 0,
+    'no-alert': 0,
+    'react/jsx-wrap-multilines':0,
     'jsx-a11y/anchor-is-valid': 0,
     'react/destructuring-assignment': 0,
     'react/jsx-one-expression-per-line': 0,
