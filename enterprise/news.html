@@ -197,7 +197,7 @@
                     $.each(now, function (index, ele) {
                       //<img data-src="./dist/images/hotfood1-original.png" datasrcset="./dist/images/hotFood1-90.png 90w,./dist/images/hotfood1-180.png 180w,./dist/images/hotfood1-original.png," class="card-img-top img-fluid lazyload" alt="..." data-sizes="auto">
                         $('.card').eq(index).find('img').attr({'data-src':`./dist/images/news/${ele.img}-original.png`,
-                      'datasrcset':`./dist/images/news/${ele.img}-90.png 90w,./dist/images/news/${ele.img}-180.png 180w,./dist/images/news/${ele.img}-360.png 360w,./dist/images/news/${ele.img}-original.png`,
+                      'data-srcset':`./dist/images/news/${ele.img}-90.png 90w,./dist/images/news/${ele.img}-180.png 180w,./dist/images/news/${ele.img}-360.png 360w,./dist/images/news/${ele.img}-original.png`,
                     'alt':`./dist/images/news/${ele.img}-original`,
                     'class':"card-img-top img-fluid lazyload" ,
                     'data-sizes':"auto"})
